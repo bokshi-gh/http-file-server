@@ -1,9 +1,9 @@
 $ErrorActionPreference = "Stop"
 
-$repo = "https://github.com/bokshi-gh/file-server.git"
-$tmpDir = "$env:TEMP\file-server-build"
-$exeName = "goserve.exe"
-$installRoot = "C:\Program Files\GoServe"
+$repo = "https://github.com/bokshi-gh/http-file-server.git"
+$tmpDir = "$env:TEMP\http-file-server-build"
+$exeName = "httpfs.exe"
+$installRoot = "C:\Program Files\httpfs"
 $installBin = "$installRoot\bin"
 
 if (Test-Path $tmpDir) {
@@ -12,7 +12,7 @@ if (Test-Path $tmpDir) {
 
 git clone $repo $tmpDir
 
-Set-Location "$tmpDir\cmd\goserve"
+Set-Location "$tmpDir\cmd\httpfs"
 go build -o $exeName
 
 if (-not (Test-Path $installBin)) {
@@ -39,4 +39,4 @@ Write-Host "Build complete!"
 Write-Host "Executable: $installBin\$exeName"
 Write-Host "Documentation: $installRoot\README.md"
 Write-Host "License: $installRoot\LICENSE"
-Write-Host "You can now run 'goserve.exe' from any PowerShell session."
+Write-Host "You can now run 'httpfs.exe' from any PowerShell session."
