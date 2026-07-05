@@ -126,8 +126,6 @@ func serveFile(fullPath string, verbose bool, w http.ResponseWriter) {
 		mime = "audio/mpeg"
 	case ".zip":
 		mime = "application/zip"
-	default:
-		mime = "text/plain"
 	}
 
 	w.Header().Set("Content-Type", mime)
