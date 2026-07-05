@@ -77,10 +77,10 @@ func ClientHandler(rootDir string, verbose bool) http.HandlerFunc {
 			for _, e := range entries {
 				name := e.Name()
 				if e.IsDir() {
-					fmt.Fprintf(w, `<p><i class="fa-solid fa-folder-open"></i><a href="%s/">%s</a></p>`, name, name)
+					fmt.Fprintf(w, `<p><i class="fa-regular fa-folder-open"></i><a href="%s/">%s</a></p>`, name, name)
 					continue
 				}
-				fmt.Fprintf(w, `<p><i class="fa-solid fa-file"></i><a href="%s">%s</a></p>`, name, name)
+				fmt.Fprintf(w, `<p><i class="fa-regular fa-file"></i><a href="%s">%s</a></p>`, name, name)
 			}
 			fmt.Fprint(w, "</div></body></html>")
 
