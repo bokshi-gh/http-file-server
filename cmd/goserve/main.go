@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/bokshi-gh/file-server/internal/handlers"
+	"github.com/bokshi-gh/http-file-server/internal/handlers"
 )
 
 func main() {
